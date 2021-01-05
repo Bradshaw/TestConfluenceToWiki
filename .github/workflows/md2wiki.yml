@@ -6,7 +6,7 @@ on:
             - main
 
 jobs:
-    generate-docs:
+    readme-to-wiki:
         name: 📝Docs to wiki
         runs-on: ubuntu-latest
         steps:
@@ -14,6 +14,10 @@ jobs:
               with:
                   lfs: true
             - name: Docs to wiki
-              uses: Bradshaw/markdown2confluence@v0.3
+              uses: Bradshaw/markdown2confluence@v1.0
               with:
                   md-file: 'README.md'
+                  page-id: '2336653363'
+                  api-url: 'https://52entertainment.atlassian.net/wiki/rest/api'
+                  api-user: 'gaeel.bradshaw@goto-games.com'
+                  api-key: ${{ secrets.CONFLUENCE_TOKEN }}
