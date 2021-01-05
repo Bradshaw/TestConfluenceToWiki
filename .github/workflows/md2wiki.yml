@@ -14,6 +14,6 @@ jobs:
               with:
                   lfs: true
             - name: Docs to wiki
-              uses: Bradshaw/markdown2confluence@v0
+              uses: Bradshaw/markdown2confluence@v0.1
               with:
                   md-file: 'README.md'
