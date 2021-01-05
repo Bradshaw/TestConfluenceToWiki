@@ -1,0 +1,19 @@
+name: 📝Put documentation on the Wiki
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    generate-docs:
+        name: 📝Docs to wiki
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  lfs: true
+            - name: Docs to wiki
+              uses: Bradshaw/markdown2confluence@v0
+              with:
+                  md-file: 'README.md'
